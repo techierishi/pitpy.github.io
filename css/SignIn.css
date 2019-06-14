@@ -217,6 +217,14 @@ input {
     }
 }
 
+@media screen and (min-height: 736px) {
+    .signin-logo {
+        position: relative;
+        width: 16rem;
+        height: auto;
+    }
+}
+
 @media screen and (min-height: 812px) {
     .signin-logo {
         position: relative;
