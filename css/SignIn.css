@@ -217,7 +217,7 @@ input {
     }
 }
 
-@media screen and (min-height: 736px) {
+@media screen and (min-height: 640px) {
     .signin-logo {
         position: relative;
         width: 16rem;
