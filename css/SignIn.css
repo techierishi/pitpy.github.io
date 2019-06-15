@@ -161,7 +161,8 @@ input {
     color: rgba(226, 19, 19, 0.698);
     transition: all .2s;
     font-size: 1.2rem;
-    box-shadow: 0rem .4rem .4rem -.4rem rgba(255, 0, 0, 1);
+    box-shadow: 0rem .65rem .65rem -.3rem rgba(255, 0, 0, 1);
+    transform: translateY(-.3rem)
 }
 
 .btn-login:hover{
@@ -217,6 +218,10 @@ input {
     .signin-insider{
         width: 30rem;
         padding: 2rem 2rem;
+    }
+    .btn-login{
+        box-shadow: 0rem .4rem .4rem -.4rem rgba(255, 0, 0, 1);
+        transform: translateY(0rem)
     }
 }
 
