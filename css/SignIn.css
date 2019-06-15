@@ -157,15 +157,15 @@ input {
     outline: none;
     border: solid 1px rgba(226, 19, 19, .4);
     border-radius: 2rem;
-    background-color: white;
-    color: rgba(226, 19, 19, 0.698);
+    background-color: rgba(226, 19, 19, 0.698);
+    color: white;
     transition: all .2s;
     font-size: 1.2rem;
 }
 
 .btn-login:active {
-    color: white;
-    background-color: rgba(226, 19, 19, 0.698);
+    color: rgba(226, 19, 19, 0.698);
+    background-color: white;
 }
 
 #signin-footer{
@@ -213,7 +213,9 @@ input {
     }
     .btn-login{
         box-shadow: 0rem .4rem .4rem -.4rem rgba(255, 0, 0, 1);
-        transform: translateY(0rem)
+        transform: translateY(0rem);
+        color: rgba(226, 19, 19, 0.698);
+        background-color: white;
     }
     .btn-login:hover{
         box-shadow: 0rem .65rem .65rem -.3rem rgba(255, 0, 0, 1);
