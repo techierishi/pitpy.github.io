@@ -130,6 +130,7 @@ body{
     outline: none;
     width: inherit;
     will-change: width;
+    transition: all .5s;
 }
 
 @media screen and (min-width: 760px){
