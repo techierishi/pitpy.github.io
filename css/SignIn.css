@@ -48,11 +48,6 @@ body{
     background-color: rgba(255, 255, 255, .75)
 }
 
-.specer {
-    flex: 1 1 auto;
-    min-height: 2rem;
-}
-
 .signin-logo-box {
     position: relative;
     flex: 1 1 auto;
@@ -200,9 +195,6 @@ input {
         position: relative;
         width: 45rem;
         height: 45rem;
-    }
-    .specer {
-        max-height: 5rem;
     }
     .signin-box {
         flex: 2 2 auto;

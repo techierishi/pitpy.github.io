@@ -83,6 +83,9 @@ body {
     left: 0;
     position: relative;
     width: 0%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
 }
 
 .app-info{
@@ -116,7 +119,7 @@ body {
     }
     
     .two .app-content {
-        flex: 0 0 75%;
+        flex: 1 1 auto;
     }
 }
 

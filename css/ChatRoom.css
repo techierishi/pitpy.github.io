@@ -10,6 +10,7 @@ body{
     background-color: white;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 /* ========================================================= */
@@ -116,7 +117,7 @@ body{
     border: 0.063rem solid #fff;
     border: solid 0.063rem rgba(136,152,170,.1);
     box-shadow: 0rem 0.313rem 0.625rem -0.625rem rgba(136,152,170,.5);
-    border-radius: 0.625rem;
+    border-radius: 2rem;
     padding: 0.563rem 0.750rem 0.688rem;
     margin: 0.313rem 0.625rem;
     box-sizing: border-box;
@@ -130,6 +131,13 @@ body{
     width: inherit;
     will-change: width;
 }
+
+@media screen and (min-width: 760px){
+    .input-box{
+        border-radius: .6rem;
+    }
+}
+
 .input-inside{
     position: relative;
     /* flex: 1;
