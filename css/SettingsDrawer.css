@@ -321,32 +321,33 @@ body {
 
 .edit-box .edit-able .input-box {
     height: 1.6rem;
-    border-bottom: solid .08rem rgb(228, 38, 38);
+    border-bottom: solid .1rem rgb(228, 38, 38);
 }
 
 .edit-box .edit-able .ico-box {
     color: #6B6B6B;
 }
 
-.submit-box{
-    flex: 0 0 2rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-
 .edit-box> ._title-box{
     flex: 0 0 1rem;
 }
 
+.submit-box{
+    flex: 0 0 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1rem;
+}
+
 .edit-box> ._title-box> span{
-    font-size: .88rem;
+    font-size: 1rem;
     font-weight: 700;
 }
 
 .submit-box> span{
     color: rgb(228, 38, 38);
     margin-left: 1.4rem;
-    font-size: .88rem;
+    font-size: 1rem;
     font-weight: 700;
 }
