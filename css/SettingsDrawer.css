@@ -141,7 +141,7 @@ body {
 .control-content {
     position: relative;
     overflow: hidden;
-    height: 100%;
+    height: auto;
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
@@ -150,7 +150,7 @@ body {
 .control-inside {
     position: relative;
     display: flex;
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     flex-direction: column;
     padding-left: .6rem;
     padding-right: .6rem;
@@ -208,7 +208,8 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    flex: 1 1 auto;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -216,6 +217,7 @@ body {
     box-sizing: border-box;
     padding-left: .6rem;
     padding-right: .6rem;
+    margin-bottom: 1rem;
 }
 
 .btn-signout {
