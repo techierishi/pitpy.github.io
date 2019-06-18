@@ -90,7 +90,8 @@
                 </div>
                 <div class="_control edit-able">
                     <div class="input-box">
-                        <div class="input" id="input" onfocus="document.execCommand('selectAll',false,null)" contenteditable="true">Tony Stark</div>
+                        <div class="input" id="input" onfocus="document.execCommand('selectAll',false,null)"
+                            contenteditable="true">Tony Stark</div>
                         <div class="ico-box">
                             <span>25</span>
                         </div>
@@ -108,18 +109,18 @@
 </html>
 
 <script>
-    function dismise(){
+    function dismise() {
         const e = document.getElementById("edit-panel")
-        e.setAttribute("style","display:none")
-    }
-    function show(){
-        const e = document.getElementById("edit-panel")
-        const input = document.getElementById("input")
-        e.setAttribute("style","display:flex")
-        focus()
+        e.setAttribute("style", "display:none")
     }
 
-    function _focus(){
+    function show() {
+        const e = document.getElementById("edit-panel")
+        e.setAttribute("style", "display:flex")
+        _focus()
+    }
+
+    function _focus() {
         const input = document.getElementById("input")
         setTimeout(() => {
             input.focus()
