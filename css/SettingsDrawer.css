@@ -315,7 +315,7 @@ body {
 }
 
 .edit-box .edit-able {
-    margin-top: 1.3rem;
+    margin-top: 1.6rem;
     flex: 0 0 2rem;
 }
 
@@ -337,8 +337,8 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-top: 1.4rem;
-    margin-bottom: .2rem;
+    margin-top: 1.6rem;
+    margin-bottom: .18rem;
 }
 
 .edit-box> ._title-box> span{
@@ -348,7 +348,7 @@ body {
 
 .submit-box> span{
     color: rgb(228, 38, 38);
-    margin-left: 1.4rem;
+    margin-left: 2rem;
     font-size: 1rem;
     font-weight: 700;
 }
