@@ -306,23 +306,34 @@ body {
 
 .edit-box{
     position: relative;
-    flex: 0 0 7rem;
+    flex: 0 0 2rem;
     display: flex;
     flex-direction: column;
     background-color: white;
     border-radius: .4rem .4rem 0 0;
-    padding: .8rem .8rem
+    padding: 1.2rem
+}
+
+.edit-box .edit-able {
+    margin-top: 1rem;
+    flex: 0 0 2rem;
 }
 
 .edit-box .edit-able .input-box {
+    height: 1.6rem;
     border-bottom: solid .08rem rgb(163, 163, 163);
 }
 
 .submit-box{
-    flex: 0 0 2.8rem;
+    flex: 0 0 1.8rem;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    /* margin-bottom: .2rem; */
+}
+
+.edit-box> ._title-box{
+    flex: 0 0 1rem;
 }
 
 .edit-box> ._title-box> span{
