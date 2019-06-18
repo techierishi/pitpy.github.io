@@ -329,11 +329,10 @@ body {
 }
 
 .submit-box{
-    flex: 0 0 1.8rem;
+    flex: 0 0 2rem;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    /* margin-bottom: .2rem; */
 }
 
 .edit-box> ._title-box{
