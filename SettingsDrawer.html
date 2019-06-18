@@ -47,7 +47,7 @@
                     </div>
                     <div class="control-content">
                         <div class="control-inside">
-                            <div class="control-box">
+                            <div class="control-box" onclick="show()">
                                 <div class="_title-box">
                                     <span>Name</span>
                                 </div>
@@ -82,8 +82,8 @@
             </div>
         </div>
 
-        <div id="edit-panel">
-            <div class="dismise"></div>
+        <div id="edit-panel" id="dismise">
+            <div class="dismise" onclick="dismise()"></div>
             <div class="edit-box">
                 <div class="_title-box">
                     <span>Enter your name</span>
@@ -106,3 +106,14 @@
 </body>
 
 </html>
+
+<script>
+    function dismise(){
+        const e = document.getElementById("edit-panel")
+        e.setAttribute("style","display:none")
+    }
+    function show(){
+        const e = document.getElementById("edit-panel")
+        e.setAttribute("style","display:flex")
+    }
+</script>
