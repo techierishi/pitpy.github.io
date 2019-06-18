@@ -82,7 +82,7 @@
             </div>
         </div>
 
-        <div id="edit-panel" id="dismise" onclick="show()">
+        <div id="edit-panel" id="dismise" onclick="_focus()">
             <div class="dismise" onclick="dismise()"></div>
             <div class="edit-box">
                 <div class="_title-box">
@@ -116,6 +116,11 @@
         const e = document.getElementById("edit-panel")
         const input = document.getElementById("input")
         e.setAttribute("style","display:flex")
+        focus()
+    }
+
+    function _focus(){
+        const input = document.getElementById("input")
         setTimeout(() => {
             input.focus()
         }, 0);
