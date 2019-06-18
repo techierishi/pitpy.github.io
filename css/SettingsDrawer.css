@@ -349,9 +349,13 @@ body {
     font-weight: 600;
 }
 
-.submit-box> a{
+.submit-box> button{
     color: rgb(228, 38, 38);
     margin-left: 2rem;
     font-size: 1rem;
     font-weight: 700;
+    border: none;
+    outline: none;
+    padding: 0;
+    background-color: transparent;
 }
