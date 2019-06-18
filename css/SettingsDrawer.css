@@ -311,11 +311,11 @@ body {
     flex-direction: column;
     background-color: white;
     border-radius: .4rem .4rem 0 0;
-    padding: 1.2rem
+    padding: 1.4rem
 }
 
 .edit-box .edit-able {
-    margin-top: 1rem;
+    margin-top: 1.3rem;
     flex: 0 0 2rem;
 }
 
@@ -337,12 +337,13 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 1.4rem;
+    margin-bottom: .2rem;
 }
 
 .edit-box> ._title-box> span{
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .submit-box> span{
