@@ -198,6 +198,8 @@ body {
     outline: none;
 }
 
+.input::selection { background: #EB5050; color: white; }
+
 .ico-box {
     font-size: .8rem;
     color: #EB5050;
