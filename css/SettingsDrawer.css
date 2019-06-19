@@ -255,10 +255,19 @@ body {
 
 .input::selection { background: rgb(238, 138, 138) }
 
+.icbox{
+    position: relative;
+    padding: .5rem 0;
+    height: 100%;
+    width: 2rem;
+    box-sizing: border-box;
+}
+
 .ico-box {
+    position: absolute;
     font-size: .8rem;
     color: #EB5050;
-    padding-left: .4rem;
+    right: 0;
 }
 
 .signout-box {
@@ -277,7 +286,7 @@ body {
     margin-bottom: 1rem;
 }
 
-.btn-signout {
+.btn-signout, .btn-signout-desktop {
     position: relative;
     width: 100%;
     height: 2.8rem;
@@ -291,6 +300,25 @@ body {
 }
 
 .btn-signout:active {
+    color: rgba(226, 19, 19, 0.698);
+    background-color: white;
+}
+
+.btn-signout-desktop{
+    box-shadow: 0rem .4rem .4rem -.4rem rgba(255, 0, 0, 1);
+    transform: translateY(0rem);
+    color: rgba(226, 19, 19, 0.698);
+    background-color: white;
+    border-radius: 2rem;
+}
+.btn-signout-desktop:hover{
+    box-shadow: 0rem .65rem .65rem -.3rem rgba(255, 0, 0, 1);
+    transform: translateY(-.3rem)
+}
+
+.btn-signout-desktop:active {
+    box-shadow: 0rem .4rem .4rem -.4rem rgba(255, 0, 0, 1);
+    transform: translateY(0rem);
     color: rgba(226, 19, 19, 0.698);
     background-color: white;
 }
@@ -338,24 +366,6 @@ body {
     .about{
         font-size: .9rem;
     }
-    .btn-signout{
-        box-shadow: 0rem .4rem .4rem -.4rem rgba(255, 0, 0, 1);
-        transform: translateY(0rem);
-        color: rgba(226, 19, 19, 0.698);
-        background-color: white;
-        border-radius: 2rem;
-    }
-    .btn-signout:hover{
-        box-shadow: 0rem .65rem .65rem -.3rem rgba(255, 0, 0, 1);
-        transform: translateY(-.3rem)
-    }
-    
-    .btn-signout:active {
-        box-shadow: 0rem .4rem .4rem -.4rem rgba(255, 0, 0, 1);
-        transform: translateY(0rem);
-        color: rgba(226, 19, 19, 0.698);
-        background-color: white;
-    }
 }
 
 [role="button"]{
@@ -392,6 +402,10 @@ body {
     background-color: white;
     border-radius: .4rem .4rem 0 0;
     padding: 1.4rem
+}
+
+.input-border{
+    border-bottom: solid .1rem rgb(228, 38, 38);
 }
 
 .edit-box .edit-able {

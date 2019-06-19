@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
     <link rel="stylesheet" href="./css/SettingsDrawer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <title>Settings</title>
 </head>
 
@@ -58,31 +59,45 @@
                                     <span>Name</span>
                                 </div>
                                 <div class="_control _edit-able">
-                                    <div class="input-box">
-                                        <div class="input" contenteditable="true">Tony Stark</div>
-                                        <div class="ico-box">
-                                            <i class="fas fa-pencil-alt" role="button"></i>
-                                        </div>
+                                    <div :class="['input-box', inputName ? 'input-border' : '']">
+                                        <div class="input" id="input-name" v-text="name" ref="inputName"
+                                            :contenteditable="inputName" @keydown="preventA">Tony Stark</div>
+                                        <transition-group tag="span" class="icbox" name="bounce-edit"
+                                            enter-active-class="animated zoomIn" leave-active-class="animated zoomOut">
+                                            <div class="ico-box" style="animation-duration: 0.2s" v-if="inputName" :key="1">
+                                                <i class="fas fa-check" role="button" @click="editText(1)"></i>
+                                            </div>
+                                            <div class="ico-box" style="animation-duration: 0.2s" v-else :key="2">
+                                                <i class="fas fa-pencil-alt" role="button" @click="editText(1)"></i>
+                                            </div>
+                                        </transition-group>
                                     </div>
                                 </div>
                             </div>
-                            <div class="control-box">
+                            <div class="control-box" @click="floating(true)">
                                 <div class="_title-box">
                                     <span>About</span>
                                 </div>
                                 <div class="_control _edit-able">
-                                    <div class="input-box">
-                                        <div class="input" contenteditable="true">I am Iron Man</div>
-                                        <div class="ico-box">
-                                            <i class="fas fa-pencil-alt" role="button"></i>
-                                        </div>
+                                    <div :class="['input-box', inputAbout ? 'input-border' : '']">
+                                        <div class="input" id="input-about" v-text="about" ref="inputAbout"
+                                            :contenteditable="inputAbout" @keydown="preventB">I am Iron Man</div>
+                                        <transition-group tag="span" class="icbox" name="bounce-edit"
+                                            enter-active-class="animated zoomIn" leave-active-class="animated zoomOut">
+                                            <div class="ico-box" style="animation-duration: 0.2s" v-if="inputAbout" :key="1">
+                                                <i class="fas fa-check" role="button" @click="editText(2)"></i>
+                                            </div>
+                                            <div class="ico-box" style="animation-duration: 0.2s" v-else :key="2">
+                                                <i class="fas fa-pencil-alt" role="button" @click="editText(2)"></i>
+                                            </div>
+                                        </transition-group>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="signout-box">
-                        <button class="btn-signout" role="button">Sign out</button>
+                        <button :class="[edit ? 'btn-signout' : 'btn-signout-desktop']" role="button">Sign out</button>
                     </div>
                 </div>
             </div>
@@ -96,7 +111,8 @@
                 </div>
                 <div class="_control edit-able">
                     <div :class="['input-box', focused ? 'input-border' : '']">
-                        <div class="input" ref="input" id="input"  @focus="_focus" @blur="focused = false" contenteditable="true">Tony Stark</div>
+                        <div class="input" ref="input" id="input" @focus="_focus" @blur="focused = false"
+                            contenteditable="true">Tony Stark</div>
                         <div class="ico-box">
                             <span>25</span>
                         </div>
@@ -119,16 +135,77 @@
         data() {
             return {
                 editPanel: false,
-                focused: false
+                focused: false,
+                edit: false,
+                inputName: false,
+                inputAbout: false,
+                name: 'Tony Stark',
+                about: 'I am Iron Man'
+            }
+        },
+        mounted() {
+            this.edit = this.detectMobile
+            window.addEventListener('resize', () => {
+                this.edit = this.detectMobile        
+            });
+        },
+        computed: {
+            detectMobile() {
+                if (navigator.userAgent.match(/Android/i) ||
+                    navigator.userAgent.match(/webOS/i) ||
+                    navigator.userAgent.match(/iPhone/i) ||
+                    navigator.userAgent.match(/iPad/i) ||
+                    navigator.userAgent.match(/iPod/i) ||
+                    navigator.userAgent.match(/BlackBerry/i) ||
+                    navigator.userAgent.match(/Windows Phone/i)
+                ) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
         },
         methods: {
+            preventA(e){
+                let value = this.$refs.inputName.innerText
+                if(value.length > 25 && event.keyCode != 8)
+                    event.preventDefault()
+            },
+            preventB(e){
+                let value = this.$refs.inputAbout.innerText
+                if(value.length > 25 && event.keyCode != 8)
+                    event.preventDefault()
+            },
             floating(e) {
-                if (this.detectmob()) {
+                if (this.detectMobile) {
                     this.editPanel = e
-                    if(e) this._focus()
-                }else{
+                    if (e) this._focus()
+                } else {
                     return
+                }
+            },
+            editText(e) {
+                if (this.detectMobile) {
+                    this.inputName = false
+                    this.inputAbout = false
+                } else {
+                    if (e == 1) {
+                        if(this.inputName)
+                            this.inputName = false
+                        else
+                             this.inputName = true
+                        this.$nextTick(()=>{
+                            this.$refs.inputName.focus()
+                        })
+                    } else {
+                        if(this.inputAbout)
+                            this.inputAbout = false
+                        else
+                            this.inputAbout = true
+                        this.$nextTick(()=>{
+                            this.$refs.inputAbout.focus()
+                        })
+                    }
                 }
             },
             _focus() {
@@ -148,20 +225,6 @@
                     range.selectNodeContents(cell);
                     selection.removeAllRanges();
                     selection.addRange(range);
-                }
-            },
-            detectmob() {
-                if (navigator.userAgent.match(/Android/i) ||
-                    navigator.userAgent.match(/webOS/i) ||
-                    navigator.userAgent.match(/iPhone/i) ||
-                    navigator.userAgent.match(/iPad/i) ||
-                    navigator.userAgent.match(/iPod/i) ||
-                    navigator.userAgent.match(/BlackBerry/i) ||
-                    navigator.userAgent.match(/Windows Phone/i)
-                ) {
-                    return true;
-                } else {
-                    return false;
                 }
             }
         },
