@@ -90,14 +90,13 @@
 
         <div id="edit-panel" id="dismise" v-if="editPanel">
             <div class="dismise" @click="floating(false)"></div>
-            <div class="edit-box" @click="_focus()">
+            <div class="edit-box">
                 <div class="_title-box">
                     <span>Enter your name</span>
                 </div>
                 <div class="_control edit-able">
-                    <div class="input-box">
-                        <div class="input" id="input" onfocus="document.execCommand('selectAll',false,null)"
-                            contenteditable="true">Tony Stark</div>
+                    <div :class="['input-box', focused ? 'input-border' : '']">
+                        <div class="input" ref="input" id="input" @focus="_focus" @blur="focused = false" contenteditable="true">Tony Stark</div>
                         <div class="ico-box">
                             <span>25</span>
                         </div>
@@ -119,21 +118,25 @@
         el: '#setting-wrapper',
         data() {
             return {
-                editPanel: false
+                editPanel: false,
+                focused: false
             }
         },
         methods: {
             floating(e) {
-                if (this.detectmob())
+                if (this.detectmob()) {
                     this.editPanel = e
-                else
+                    if(e) this._focus()
+                }else{
                     return
+                }
             },
             _focus() {
-                const input = document.getElementById("input")
-                setTimeout(() => {
-                    input.focus()
-                }, 0);
+                document.execCommand('selectAll',false,null)
+                this.focused = true
+                this.$nextTick(() => {
+                    this.$refs.input.focus()
+                });
             },
             detectmob() {
                 if (navigator.userAgent.match(/Android/i) ||

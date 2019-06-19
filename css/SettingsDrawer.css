@@ -253,7 +253,7 @@ body {
     outline: none;
 }
 
-.input::selection { background: #EB5050; color: white; }
+.input::selection { background: rgb(238, 138, 138) }
 
 .ico-box {
     font-size: .8rem;
@@ -402,10 +402,10 @@ body {
 .edit-box .edit-able .input-box {
     height: 1.6rem;
 }
-/* 
-.edit-box .edit-able .input-box {
+
+.edit-box .edit-able .input-border{
     border-bottom: solid .1rem rgb(228, 38, 38);
-} */
+}
 
 .edit-box .edit-able .ico-box {
     font-size: 1rem;
