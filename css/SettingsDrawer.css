@@ -23,7 +23,7 @@ body {
 
 .header {
     position: relative;
-    flex: 0 0 8rem;
+    flex: 0 0 7rem;
     order: 1;
     background-color: antiquewhite
 }
@@ -62,7 +62,7 @@ body {
 
 .back-box {
     display: flex;
-    padding: .6rem;
+    padding: 1rem;
 }
 
 .back-button {
@@ -70,7 +70,7 @@ body {
 }
 
 .title {
-    margin-left: 1rem;
+    margin-left: .6rem;
     color: white;
 }
 
@@ -84,7 +84,7 @@ body {
 
 .profile-box {
     position: absolute;
-    top: 4rem;
+    top: 3rem;
     width: 8.6rem;
     height: 8.6rem;
     background-color: white;
@@ -238,6 +238,17 @@ body {
 .btn-signout:active {
     color: rgba(226, 19, 19, 0.698);
     background-color: white;
+}
+
+@media screen and (min-width: 360px){
+    .header{
+        flex: 0 0 10rem;
+    }
+    .profile-box {
+        top: 5rem;
+        width: 10rem;
+        height: 10rem;
+    }
 }
 
 @media screen and (min-width: 760px) {
