@@ -96,7 +96,7 @@
                 </div>
                 <div class="_control edit-able">
                     <div :class="['input-box', focused ? 'input-border' : '']">
-                        <div class="input" ref="input" id="input" @focus="_focus" @blur="focused = false" contenteditable="true">Tony Stark</div>
+                        <div class="input" ref="input" id="input"  @focus="_focus" @blur="focused = false" contenteditable="true">Tony Stark</div>
                         <div class="ico-box">
                             <span>25</span>
                         </div>
@@ -132,11 +132,23 @@
                 }
             },
             _focus() {
-                document.execCommand('selectAll',false,null)
-                this.focused = true
                 this.$nextTick(() => {
+                    this.focused = true
                     this.$refs.input.focus()
                 });
+                var cell = this.$refs.input;
+                var range, selection;
+                if (document.body.createTextRange) {
+                    range = document.body.createTextRange();
+                    range.moveToElementText(cell);
+                    range.select();
+                } else if (window.getSelection) {
+                    selection = window.getSelection();
+                    range = document.createRange();
+                    range.selectNodeContents(cell);
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                }
             },
             detectmob() {
                 if (navigator.userAgent.match(/Android/i) ||
