@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
     <link rel="stylesheet" href="./css/SettingsDrawer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <title>Settings</title>
@@ -31,14 +32,12 @@
                 <div class="profile-content">
                     <div class="profile-box">
                         <img class="profile" src="./img/tony.jpg" alt="" draggable="false">
-                        <span class="behigh">
-                            <div class="brows-box" role="button">
-                                <label for="profile" class="brows-icon-box" role="button">
-                                    <i class="fas fa-camera"></i>
-                                </label>
-                                <input type="file" id="profile" accept=".jpeg,.jpg,.png,.gif,.bmp,.ico,.svg" />
-                            </div>
-                        </span>
+                        <span class="behigh"></span>
+                        <label for="profile" class="brows-icon-box-desktop" role="button"></label>
+                        <label for="profile" class="brows-icon-box" role="button">
+                            <i class="fas fa-camera"></i>
+                        </label>
+                        <input type="file" id="profile" accept=".jpeg,.jpg,.png,.gif,.bmp,.ico,.svg" />
                     </div>
                 </div>
             </div>
@@ -54,7 +53,7 @@
                     </div>
                     <div class="control-content">
                         <div class="control-inside">
-                            <div class="control-box" onclick="show()">
+                            <div class="control-box" @click="floating(true)">
                                 <div class="_title-box">
                                     <span>Name</span>
                                 </div>
@@ -89,9 +88,9 @@
             </div>
         </div>
 
-        <div id="edit-panel" id="dismise">
-            <div class="dismise" onclick="dismise()"></div>
-            <div class="edit-box" onclick="_focus()">
+        <div id="edit-panel" id="dismise" v-if="editPanel">
+            <div class="dismise" @click="floating(false)"></div>
+            <div class="edit-box" @click="_focus()">
                 <div class="_title-box">
                     <span>Enter your name</span>
                 </div>
@@ -105,8 +104,8 @@
                     </div>
                 </div>
                 <div class="submit-box">
-                    <button role="button" onclick="dismise()">CANCEL</button>
-                    <button role="button" onclick="dismise()">SAVE</button>
+                    <button role="button" @click="floating(false)">CANCEL</button>
+                    <button role="button" @click="floating(false)">SAVE</button>
                 </div>
             </div>
         </div>
@@ -116,21 +115,40 @@
 </html>
 
 <script>
-    function dismise() {
-        const e = document.getElementById("edit-panel")
-        e.setAttribute("style", "display:none")
-    }
-
-    function show() {
-        const e = document.getElementById("edit-panel")
-        e.setAttribute("style", "display:flex")
-        _focus()
-    }
-
-    function _focus() {
-        const input = document.getElementById("input")
-        setTimeout(() => {
-            input.focus()
-        }, 0);
-    }
+    new Vue({
+        el: '#setting-wrapper',
+        data() {
+            return {
+                editPanel: false
+            }
+        },
+        methods: {
+            floating(e) {
+                if (this.detectmob())
+                    this.editPanel = e
+                else
+                    return
+            },
+            _focus() {
+                const input = document.getElementById("input")
+                setTimeout(() => {
+                    input.focus()
+                }, 0);
+            },
+            detectmob() {
+                if (navigator.userAgent.match(/Android/i) ||
+                    navigator.userAgent.match(/webOS/i) ||
+                    navigator.userAgent.match(/iPhone/i) ||
+                    navigator.userAgent.match(/iPad/i) ||
+                    navigator.userAgent.match(/iPod/i) ||
+                    navigator.userAgent.match(/BlackBerry/i) ||
+                    navigator.userAgent.match(/Windows Phone/i)
+                ) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+    })
 </script>
