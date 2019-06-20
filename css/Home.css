@@ -121,7 +121,7 @@ body{
 .content{
     position: relative;
     flex: 1 1 auto;
-    order: 3;
+    order: 2;
     background-color: rgb(255, 255, 255);
 }
 
@@ -130,11 +130,12 @@ body{
 .tab{
     position: relative;
     flex: 0 0 3rem;
-    order: 2;
+    order: 3;
     background-color: #F7FAFC;
 }
 
-.tab-box{
+.mobile>.tab> .tab-box,
+.desktop>.tab> .tab-box{
     position: relative;
     display: flex;
     width: 100%;
@@ -146,18 +147,32 @@ body{
 .tab-items{
     flex: 1 1 auto;
     padding: .4rem .6rem;
+    color: #5B5B5B;
+}
+
+.mobile>.tab>.tab-box>.tab-items:active, 
+.mobile>.tab>.tab-box>.tab-items:active>.item>.material-icons{
+    color: #EF5353;
+}
+
+.desktop>.tab>.tab-box>.tab-items:hover, 
+.desktop>.tab>.tab-box>.tab-items:hover>.item>.material-icons{
+    color: #EF5353;
+}
+.desktop>.tab>.tab-box>.tab-items:active, 
+.desktop>.tab>.tab-box>.tab-items:active>.item>.material-icons{
+    color: #5B5B5B;
 }
 
 .tab-items> .item{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: ce                                                                                                                                                                                                                                                                                                                                                                                                                                                                          nter;
     align-items: center;
 }
 
 .item> label {
     margin-top: .2rem;
-    color: #5B5B5B;
     font-size: .8rem;
 }
 

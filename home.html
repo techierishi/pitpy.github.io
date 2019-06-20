@@ -14,7 +14,7 @@
 
 <body>
     <div id="home-wrapper">
-        <div class="home-container">
+        <div :class="['home-container', mobileMode ? 'mobile' : 'desktop']">
             <div class="header">
                 <div class="header-box">
                     <div class="avatar-box" role="button">
@@ -83,7 +83,30 @@
                 }, {
                     name: 'Notification',
                     icon: 'notification_important',
-                }]
+                }],
+                mobileMode: true
+            }
+        },
+        mounted() {
+            this.mobileMode = this.detectMobile
+            window.addEventListener('resize', () => {
+                this.mobileMode = this.detectMobile        
+            });
+        },
+        computed: {
+            detectMobile() {
+                if (navigator.userAgent.match(/Android/i) ||
+                    navigator.userAgent.match(/webOS/i) ||
+                    navigator.userAgent.match(/iPhone/i) ||
+                    navigator.userAgent.match(/iPad/i) ||
+                    navigator.userAgent.match(/iPod/i) ||
+                    navigator.userAgent.match(/BlackBerry/i) ||
+                    navigator.userAgent.match(/Windows Phone/i)
+                ) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
         },
     })
