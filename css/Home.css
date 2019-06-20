@@ -109,6 +109,22 @@ body{
     display: flex;
     align-items: center;
     padding: .4rem;
+    border-radius: 50%;
+    transition: all .2s;
+}
+
+.mobile>.header>.header-box>
+.control-box>.button-box>.ico-box:active{
+   background-color: rgb(248, 213, 213);
+}
+
+.desktop>.header>.header-box>
+.control-box>.button-box>.ico-box:hover>.material-icons{
+   color: #EF5353;
+}
+.desktop>.header>.header-box>
+.control-box>.button-box>.ico-box:active{
+   background-color: rgb(248, 213, 213);
 }
 
 .material-icons {
