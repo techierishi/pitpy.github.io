@@ -164,6 +164,11 @@ body{
     color: #5B5B5B;
 }
 
+.tab-active>.item>.material-icons,
+.tab-active>.item>label {
+    color: #EF5353;
+}
+
 .tab-items> .item{
     display: flex;
     flex-direction: column;

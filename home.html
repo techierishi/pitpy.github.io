@@ -51,7 +51,7 @@
             <div class="tab">
                 <div class="tab-box">
                     <template v-for="(item, index) in items">
-                        <div class="tab-items" :key="index">
+                        <div @click="activeTab(index)" :class="['tab-items', tabActive == index ? 'tab-active' : '']" :key="index">
                             <div class="item" role="button">
                                 <i class="material-icons">{{item.icon}}</i>
                                 <label>{{item.name}}</label>
@@ -84,7 +84,8 @@
                     name: 'Notification',
                     icon: 'notification_important',
                 }],
-                mobileMode: true
+                mobileMode: true,
+                tabActive: 0
             }
         },
         mounted() {
@@ -107,6 +108,11 @@
                 } else {
                     return false;
                 }
+            }
+        },
+        methods: {
+            activeTab(index){
+                this.tabActive = index
             }
         },
     })
