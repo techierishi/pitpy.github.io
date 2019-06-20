@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./css/Home.css">
     <title>Home</title>
 </head>
@@ -49,35 +49,42 @@
 
             </div>
             <div class="tab">
-               <div class="tab-box">
-                   <div class="tab-items">
-                       <div class="item" role="button">
-                           <i class="material-icons">chat_bubble_outline</i>
-                           <label>Chats</label>
-                       </div>
-                   </div>
-                   <div class="tab-items">
-                        <div class="item" role="button">
-                            <i class="material-icons">contact_mail</i>
-                            <label>Contact</label>   
+                <div class="tab-box">
+                    <template v-for="(item, index) in items">
+                        <div class="tab-items" :key="index">
+                            <div class="item" role="button">
+                                <i class="material-icons">{{item.icon}}</i>
+                                <label>{{item.name}}</label>
+                            </div>
                         </div>
-                   </div>
-                   <div class="tab-items">
-                       <div class="item" role="button">
-                            <i class="material-icons">extension</i>
-                            <label>Extension</label>
-                       </div>
-                   </div>
-                   <div class="tab-items">
-                       <div class="item" role="button">
-                            <i class="material-icons">notification_important</i>
-                            <label>Notification</label>
-                       </div>
-                   </div>
-               </div>
+                    </template>
+                </div>
             </div>
         </div>
     </div>
 </body>
 
 </html>
+
+<script>
+    new Vue({
+        el: '#home-wrapper',
+        data() {
+            return {
+                items: [{
+                    name: 'Chats',
+                    icon: 'chat_bubble_outline',
+                }, {
+                    name: 'Contact',
+                    icon: 'contact_mail',
+                }, {
+                    name: 'Extension',
+                    icon: 'extension',
+                }, {
+                    name: 'Notification',
+                    icon: 'notification_important',
+                }]
+            }
+        },
+    })
+</script>
