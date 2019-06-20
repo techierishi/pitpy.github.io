@@ -51,10 +51,10 @@
             <div class="tab">
                 <div class="tab-box">
                     <template v-for="(item, index) in items">
-                        <div @click="activeTab(index)" :class="['tab-items', tabActive == index ? 'tab-active' : '']" :key="index">
+                        <div @click="activeTab(index)" role="button" :class="['tab-items', tabActive == index ? 'tab-active' : '']" :key="index">
                             <div class="item" role="button">
                                 <i class="material-icons">{{item.icon}}</i>
-                                <label>{{item.name}}</label>
+                                <label role="button">{{item.name}}</label>
                             </div>
                         </div>
                     </template>
