@@ -241,7 +241,6 @@ body{
 }
 
 .name-time-box{
-    padding-bottom: .1rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -267,7 +266,7 @@ body{
     justify-content: center;
     align-items: center;
     align-self: stretch;
-    padding-top: .2rem;
+    margin-top: .3rem;
     width: 100%;
     font-size: .88rem;
 }
