@@ -236,7 +236,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-right: .8rem;
+    margin-right: .8rem;
     border-top: solid 0.063rem rgba(136,152,170, .12);
 }
 
@@ -294,7 +294,7 @@ body{
     color: #EF5353;
     font-family: 'Segoe UI';
     font-weight: 500;
-    box-shadow: 0 .1rem .30rem -.1rem rgba(0,0,0,.5);
+    box-shadow: 0 .1rem .30rem -.2rem rgba(0,0,0,.5);
 }
 
 /* =================================== tab ========================== */
