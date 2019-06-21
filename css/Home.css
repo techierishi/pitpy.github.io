@@ -177,7 +177,7 @@ body{
     order: 2;
     position: relative;
     flex: 1 1 auto;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     overflow: hidden;
 }
 
@@ -185,7 +185,7 @@ body{
     order: 3;
     position: relative;
     flex: 1 1 auto;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     overflow: hidden;
 }
 
@@ -296,10 +296,11 @@ body{
     border-radius: 3.125rem;
     padding: .1rem .438rem;
     text-align: center;
-    color: #EF5353;
+    background-color: #EF5353;
+    color: white;
     font-family: 'Segoe UI';
     font-weight: 500;
-    box-shadow: 0 .1rem .30rem -.2rem rgba(0,0,0,.5);
+    box-shadow: 0 .1rem .30rem -.1rem rgba(197, 9, 9, 1);
 }
 
 /* =================================== tab ========================== */
