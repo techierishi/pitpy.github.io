@@ -247,7 +247,9 @@ body{
 }
 
 .sender-name-box{
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(61, 61, 61);
 }
 
 .time-box{
@@ -263,7 +265,7 @@ body{
     margin-top: .2rem;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: .88rem;
 }
 
 .msg{
