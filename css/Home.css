@@ -204,9 +204,67 @@ body{
 
 .item-inbox{
     position: relative;
-    height: 3.6rem;
-    border-top: solid 0.063rem black;
-    background-color: #EF5353;
+    display: flex;
+    height: 4.375rem;
+}
+
+.avatar-inbox-panel{
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 .8rem;
+}
+
+.avatar-inbox{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 .15rem .6rem -.2rem rgba(0,0,0,.8);
+}
+
+.avatar-inbox> .avatar{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.inbox-detail{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: .8rem;
+}
+
+.name-time-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.msg-box{
+    display: flex;
+    width: 100%;
+    margin-top: .3rem;
+    justify-content: center;
+    font-size: .88rem;
+}
+
+.msg{
+    flex: 1 1 auto;
+}
+
+.msg-counter-box{
+    flex: 0 0 auto;
+}
+
+.counter{
+    font-size: .7rem;
+    border-radius: 50%;
+    padding: .16rem;
+    box-shadow: 0 .1rem .20rem -.1rem rgba(0,0,0,.8);
 }
 
 /* =================================== tab ========================== */
