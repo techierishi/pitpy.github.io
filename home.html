@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv=" X-UA-Compatible" content="ie=edge">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="./css/Home.css">
     <title>Home</title>
 </head>
@@ -33,7 +34,7 @@
                     </div>
                     <div class="control-box">
                         <div class="button-box">
-                            <div class="ico-box" role="button">
+                            <div class="ico-box" role="button" @click="searchToggle(true)">
                                 <i class="material-icons">search</i>
                             </div>
                         </div>
@@ -44,6 +45,23 @@
                         </div>
                     </div>
                 </div>
+                <transition tag="span" class="icbox" name="bounce-edit" enter-active-class="animated zoomIn"
+                    leave-active-class="animated zoomOut">
+                    <div class="search-box"  style="animation-duration: 0.4s" v-if="searchBox">
+                        <div class="header-box">
+                            <div class="search-icon-box" role="button" @click="searchToggle(false)">
+                                <i class="material-icons">arrow_back</i>
+                            </div>
+                            <div class="search-input-box">
+                                <input type="text" ref="search" placeholder="Search" autofocus v-model="txtSearch"
+                                    class="search">
+                            </div>
+                            <div class="search-icon-box" v-if="txtSearch" @click="clearSearch" role="button">
+                                <i class="material-icons">clear</i>
+                            </div>
+                        </div>
+                    </div>
+                </transition>
             </div>
             <div class="content">
 
@@ -51,7 +69,8 @@
             <div class="tab">
                 <div class="tab-box">
                     <template v-for="(item, index) in items">
-                        <div @click="activeTab(index)" role="button" :class="['tab-items', tabActive == index ? 'tab-active' : '']" :key="index">
+                        <div @click="activeTab(index)" role="button"
+                            :class="['tab-items', tabActive == index ? 'tab-active' : '']" :key="index">
                             <div class="item" role="button">
                                 <i class="material-icons">{{item.icon}}</i>
                                 <label role="button">{{item.name}}</label>
@@ -85,13 +104,15 @@
                     icon: 'notification_important',
                 }],
                 mobileMode: true,
-                tabActive: 0
+                tabActive: 0,
+                txtSearch: '',
+                searchBox: false
             }
         },
         mounted() {
             this.mobileMode = this.detectMobile
             window.addEventListener('resize', () => {
-                this.mobileMode = this.detectMobile        
+                this.mobileMode = this.detectMobile
             });
         },
         computed: {
@@ -111,8 +132,18 @@
             }
         },
         methods: {
-            activeTab(index){
+            activeTab(index) {
                 this.tabActive = index
+            },
+            searchToggle(e){
+                this.searchBox = e
+                this.$nextTick(()=>{
+                    this.clearSearch()
+                })
+            },
+            clearSearch() {
+                this.txtSearch = ''
+                this.$refs.search.focus()
             }
         },
     })
