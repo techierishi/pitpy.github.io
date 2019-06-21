@@ -241,19 +241,21 @@ body{
 }
 
 .name-time-box{
+    /* padding-top: .2rem; */
     width: 100%;
     display: flex;
     justify-content: space-between;
+    line-height: 100%;
 }
 
 .sender-name-box{
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: rgb(61, 61, 61);
 }
 
 .time-box{
-    margin-top: .2rem;
+    margin-top: .12rem;
     margin-left: .2rem;
     font-size: .750rem;
 }
@@ -261,8 +263,7 @@ body{
 .msg-box{
     display: flex;
     width: 100%;
-    height: 1.6rem;
-    margin-top: .2rem;
+    height: 1.4rem;
     justify-content: center;
     align-items: center;
     font-size: .88rem;
