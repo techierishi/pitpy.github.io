@@ -287,14 +287,14 @@ body{
 }
 
 .counter{
-    font-size: .750rem;
+    font-size: .6rem;
     font-weight: 500;
     height: 1.188rem;
     line-height: 1.188rem;
     min-width: .563rem;
     vertical-align: top;
     border-radius: 3.125rem;
-    padding: .1rem .438rem;
+    padding: .2rem .438rem;
     text-align: center;
     background-color: #EF5353;
     color: white;
