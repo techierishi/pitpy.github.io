@@ -155,7 +155,7 @@ body{
     position: relative;
     width: 100%;
     height: 2rem;
-    padding: .1rem .6rem;
+    padding: .1rem 1rem;
     box-sizing: border-box;
     font-size: 1.2rem;
     border: none;
@@ -178,6 +178,7 @@ body{
     position: relative;
     flex: 1 1 auto;
     background-color: rgb(255, 255, 255);
+    overflow: hidden;
 }
 
 .desktop>.content{
@@ -185,6 +186,27 @@ body{
     position: relative;
     flex: 1 1 auto;
     background-color: rgb(255, 255, 255);
+    overflow: hidden;
+}
+
+.content-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.content-group{
+    position: relative;
+    margin-top: -0.063rem;
+    overflow: hidden;
+}
+
+.item-inbox{
+    position: relative;
+    height: 3.6rem;
+    border-top: solid 0.063rem black;
+    background-color: #EF5353;
 }
 
 /* =================================== tab ========================== */
