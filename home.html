@@ -66,7 +66,7 @@
             <div class="content">
                 <div class="content-box">
                     <div class="content-group">
-                        <div class="item-inbox" role="button">
+                        <div class="item-inbox" role="button" ref="itemInbox" @click="Lollipop">
                             <div class="avatar-inbox-panel">
                                 <div class="avatar-inbox">
                                     <img src="./img/thanos.jpg" class="avatar" alt="" srcset="">
@@ -88,271 +88,31 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="lollipop-effect" :style="lollipopStyle" ref="lollipopEffect" v-if="lollipop"></div>
                         </div>
-
                         <div class="item-inbox" role="button">
-                            <div class="avatar-inbox-panel">
-                                <div class="avatar-inbox">
-                                    <img src="./img/bcel.png" class="avatar" alt="" srcset="">
+                                <div class="avatar-inbox-panel">
+                                    <div class="avatar-inbox">
+                                        <img src="./img/groot.jpg" class="avatar" alt="" srcset="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="inbox-detail">
-                                <div class="name-time-box">
-                                    <div class="sender-name-box">ຫຼົງທາງ</div>
-                                    <div class="time-box">Today</div>
-                                </div>
-                                <div class="msg-box">
-                                    <div class="msg">Hello, how are you?</div>
-                                    <div class="msg-counter-box">
-                                        <span>
-                                            <div class="counter-box">
-                                                <span class="counter">2</span>
-                                            </div>
-                                        </span>
+                                <div class="inbox-detail">
+                                    <div class="name-time-box">
+                                        <div class="sender-name-box">Groot</div>
+                                        <div class="time-box">Today</div>
+                                    </div>
+                                    <div class="msg-box">
+                                        <div class="msg">Hello, how are you?</div>
+                                        <div class="msg-counter-box">
+                                            <span>
+                                                <div class="counter-box">
+                                                    <span class="counter">10</span>
+                                                </div>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="item-inbox" role="button">
-                            <div class="avatar-inbox-panel">
-                                <div class="avatar-inbox">
-                                    <img src="./img/thanos.jpg" class="avatar" alt="" srcset="">
-                                </div>
-                            </div>
-                            <div class="inbox-detail">
-                                <div class="name-time-box">
-                                    <div class="sender-name-box">Thanos</div>
-                                    <div class="time-box">Today</div>
-                                </div>
-                                <div class="msg-box">
-                                    <div class="msg">Hello, how are you?</div>
-                                    <div class="msg-counter-box">
-                                        <span>
-                                            <div class="counter-box">
-                                                <span class="counter">5</span>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item-inbox" role="button">
-                            <div class="avatar-inbox-panel">
-                                <div class="avatar-inbox">
-                                    <img src="./img/bcel.png" class="avatar" alt="" srcset="">
-                                </div>
-                            </div>
-                            <div class="inbox-detail">
-                                <div class="name-time-box">
-                                    <div class="sender-name-box">ຫຼົງທາງ</div>
-                                    <div class="time-box">Today</div>
-                                </div>
-                                <div class="msg-box">
-                                    <div class="msg">Hello, how are you?</div>
-                                    <div class="msg-counter-box">
-                                        <span>
-                                            <div class="counter-box">
-                                                <span class="counter">2</span>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item-inbox" role="button">
-                            <div class="avatar-inbox-panel">
-                                <div class="avatar-inbox">
-                                    <img src="./img/thanos.jpg" class="avatar" alt="" srcset="">
-                                </div>
-                            </div>
-                            <div class="inbox-detail">
-                                <div class="name-time-box">
-                                    <div class="sender-name-box">Thanos</div>
-                                    <div class="time-box">Today</div>
-                                </div>
-                                <div class="msg-box">
-                                    <div class="msg">Hello, how are you?</div>
-                                    <div class="msg-counter-box">
-                                        <span>
-                                            <div class="counter-box">
-                                                <span class="counter">5</span>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item-inbox" role="button">
-                            <div class="avatar-inbox-panel">
-                                <div class="avatar-inbox">
-                                    <img src="./img/bcel.png" class="avatar" alt="" srcset="">
-                                </div>
-                            </div>
-                            <div class="inbox-detail">
-                                <div class="name-time-box">
-                                    <div class="sender-name-box">ຫຼົງທາງ</div>
-                                    <div class="time-box">Today</div>
-                                </div>
-                                <div class="msg-box">
-                                    <div class="msg">Hello, how are you?</div>
-                                    <div class="msg-counter-box">
-                                        <span>
-                                            <div class="counter-box">
-                                                <span class="counter">2</span>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item-inbox" role="button">
-                            <div class="avatar-inbox-panel">
-                                <div class="avatar-inbox">
-                                    <img src="./img/thanos.jpg" class="avatar" alt="" srcset="">
-                                </div>
-                            </div>
-                            <div class="inbox-detail">
-                                <div class="name-time-box">
-                                    <div class="sender-name-box">Thanos</div>
-                                    <div class="time-box">Today</div>
-                                </div>
-                                <div class="msg-box">
-                                    <div class="msg">Hello, how are you?</div>
-                                    <div class="msg-counter-box">
-                                        <span>
-                                            <div class="counter-box">
-                                                <span class="counter">5</span>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item-inbox" role="button">
-                            <div class="avatar-inbox-panel">
-                                <div class="avatar-inbox">
-                                    <img src="./img/bcel.png" class="avatar" alt="" srcset="">
-                                </div>
-                            </div>
-                            <div class="inbox-detail">
-                                <div class="name-time-box">
-                                    <div class="sender-name-box">ຫຼົງທາງ</div>
-                                    <div class="time-box">Today</div>
-                                </div>
-                                <div class="msg-box">
-                                    <div class="msg">Hello, how are you?</div>
-                                    <div class="msg-counter-box">
-                                        <span>
-                                            <div class="counter-box">
-                                                <span class="counter">2</span>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item-inbox" role="button">
-                            <div class="avatar-inbox-panel">
-                                <div class="avatar-inbox">
-                                    <img src="./img/thanos.jpg" class="avatar" alt="" srcset="">
-                                </div>
-                            </div>
-                            <div class="inbox-detail">
-                                <div class="name-time-box">
-                                    <div class="sender-name-box">Thanos</div>
-                                    <div class="time-box">Today</div>
-                                </div>
-                                <div class="msg-box">
-                                    <div class="msg">Hello, how are you?</div>
-                                    <div class="msg-counter-box">
-                                        <span>
-                                            <div class="counter-box">
-                                                <span class="counter">5</span>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item-inbox" role="button">
-                            <div class="avatar-inbox-panel">
-                                <div class="avatar-inbox">
-                                    <img src="./img/bcel.png" class="avatar" alt="" srcset="">
-                                </div>
-                            </div>
-                            <div class="inbox-detail">
-                                <div class="name-time-box">
-                                    <div class="sender-name-box">ຫຼົງທາງ</div>
-                                    <div class="time-box">Today</div>
-                                </div>
-                                <div class="msg-box">
-                                    <div class="msg">Hello, how are you?</div>
-                                    <div class="msg-counter-box">
-                                        <span>
-                                            <div class="counter-box">
-                                                <span class="counter">2</span>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item-inbox" role="button">
-                            <div class="avatar-inbox-panel">
-                                <div class="avatar-inbox">
-                                    <img src="./img/thanos.jpg" class="avatar" alt="" srcset="">
-                                </div>
-                            </div>
-                            <div class="inbox-detail">
-                                <div class="name-time-box">
-                                    <div class="sender-name-box">Thanos</div>
-                                    <div class="time-box">Today</div>
-                                </div>
-                                <div class="msg-box">
-                                    <div class="msg">Hello, how are you?</div>
-                                    <div class="msg-counter-box">
-                                        <span>
-                                            <div class="counter-box">
-                                                <span class="counter">5</span>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item-inbox" role="button">
-                            <div class="avatar-inbox-panel">
-                                <div class="avatar-inbox">
-                                    <img src="./img/bcel.png" class="avatar" alt="" srcset="">
-                                </div>
-                            </div>
-                            <div class="inbox-detail">
-                                <div class="name-time-box">
-                                    <div class="sender-name-box">ຫຼົງທາງ</div>
-                                    <div class="time-box">Today</div>
-                                </div>
-                                <div class="msg-box">
-                                    <div class="msg">Hello, how are you?</div>
-                                    <div class="msg-counter-box">
-                                        <span>
-                                            <div class="counter-box">
-                                                <span class="counter">2</span>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -396,7 +156,9 @@
                 mobileMode: true,
                 tabActive: 0,
                 txtSearch: '',
-                searchBox: false
+                searchBox: false,
+                lollipop: false,
+                lollipopStyle: ''
             }
         },
         mounted() {
@@ -404,6 +166,8 @@
             window.addEventListener('resize', () => {
                 this.mobileMode = this.detectMobile
             });
+
+            this.Lollipop()
         },
         computed: {
             detectMobile() {
@@ -434,6 +198,24 @@
             clearSearch() {
                 this.txtSearch = ''
                 this.$refs.search.focus()
+            },
+            Lollipop(){
+                const item = this.$refs.itemInbox
+                let effect = this.$refs.$lollipopEffect
+                item.onmousedown = e =>{
+                        let x = (e.offsetX == undefined) ? e.layerX : e.offsetX;
+                        let y = (e.offsetY == undefined) ? e.layerY : e.offsetY;
+                        this.lollipop = true
+                        
+                        this.lollipopStyle = {
+                            top: `${y}px`,
+                            left: `${x}px`
+                        }
+                        
+                        setTimeout(()=> {
+                            this.lollipop = false
+                        }, 500);
+                }
             }
         },
     })
