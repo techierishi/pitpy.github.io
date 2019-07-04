@@ -155,7 +155,7 @@ body {
     box-shadow: 0 0rem .8rem -.2rem rgba(77, 77, 77, .5);
     border-radius: 50%;
     z-index: 1;
-    border: solid .1rem white;
+    border: solid .2rem white;
 }
 
 .profile-box> img{

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv=" X-UA-Compatible" content="ie=edge">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
@@ -65,7 +65,7 @@
             </div>
             <div class="content">
                 <div class="content-box">
-                    <div class="content-group">
+                    <div :class="['content-group', detectMobile ? 'mobile-enter' : 'desktop-enter']">
                         <div class="item-inbox" role="button" ref="itemInbox" @click="Lollipop">
                             <div class="avatar-inbox-panel">
                                 <div class="avatar-inbox">
@@ -88,31 +88,32 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="lollipop-effect" :style="lollipopStyle" ref="lollipopEffect" v-if="lollipop"></div>
+                            <!-- <div class="lollipop-effect" :style="lollipopStyle" ref="lollipopEffect" v-if="lollipop"></div> -->
                         </div>
                         <div class="item-inbox" role="button">
-                                <div class="avatar-inbox-panel">
-                                    <div class="avatar-inbox">
-                                        <img src="./img/groot.jpg" class="avatar" alt="" srcset="">
-                                    </div>
+                            <div class="avatar-inbox-panel">
+                                <div class="avatar-inbox">
+                                    <img src="./img/groot.jpg" class="avatar" alt="" srcset="">
                                 </div>
-                                <div class="inbox-detail">
-                                    <div class="name-time-box">
-                                        <div class="sender-name-box">Groot</div>
-                                        <div class="time-box">Today</div>
-                                    </div>
-                                    <div class="msg-box">
-                                        <div class="msg">Hello, how are you?</div>
-                                        <div class="msg-counter-box">
-                                            <span>
-                                                <div class="counter-box">
-                                                    <span class="counter">10</span>
-                                                </div>
-                                            </span>
-                                        </div>
+                            </div>
+                            <div class="inbox-detail">
+                                <div class="name-time-box">
+                                    <div class="sender-name-box">Groot</div>
+                                    <div class="time-box">Today</div>
+                                </div>
+                                <div class="msg-box">
+                                    <div class="msg">Hello, how are you?</div>
+                                    <div class="msg-counter-box">
+                                        <span>
+                                            <div class="counter-box">
+                                                <span class="counter">10</span>
+                                            </div>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
+                            <!-- <div class="lollipop-effect" :style="lollipopStyle" ref="lollipopEffect" v-if="lollipop"></div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -199,24 +200,28 @@
                 this.txtSearch = ''
                 this.$refs.search.focus()
             },
-            Lollipop(){
+            Lollipop() {
                 const item = this.$refs.itemInbox
                 let effect = this.$refs.$lollipopEffect
-                item.onmousedown = e =>{
-                        let x = (e.offsetX == undefined) ? e.layerX : e.offsetX;
-                        let y = (e.offsetY == undefined) ? e.layerY : e.offsetY;
-                        this.lollipop = true
-                        
-                        this.lollipopStyle = {
-                            top: `${y}px`,
-                            left: `${x}px`
-                        }
-                        
-                        setTimeout(()=> {
-                            this.lollipop = false
-                        }, 500);
+                item.onmousedown = e => {
+                    let x = (e.offsetX == undefined) ? e.layerX : e.offsetX;
+                    let y = (e.offsetY == undefined) ? e.layerY : e.offsetY;
+                    this.lollipop = true
+
+                    this.lollipopStyle = {
+                        top: `${y}px`,
+                        left: `${x}px`
+                    }
+
+                    setTimeout(() => {
+                        this.lollipop = false
+                    }, 500);
                 }
             }
         },
     })
 </script>
+
+<style lang="scss" scoped>
+    @import "@/assets/scss/SignIn.scss";
+</style>

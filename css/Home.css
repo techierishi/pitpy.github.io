@@ -210,6 +210,18 @@ body{
     overflow: hidden;
 }
 
+.mobile-enter> .item-inbox:active{
+    background-color: rgba(239, 83, 83, .3);
+}
+
+.desktop-enter> .item-inbox:hover{
+    background-color: rgba(239, 83, 83, .3);
+}
+
+.desktop-enter> .item-inbox:active{
+    background-color: rgba(239, 83, 83, .1);
+}
+
 .avatar-inbox-panel{
     flex: 0 0 auto;
     display: flex;
